@@ -1,0 +1,101 @@
+/*------------------------------------*\
+    breakpoint vars
+\*------------------------------------*/
+$break-320: 20em;
+$break-321: 20.0625em;
+$break-480: 30em;
+$break-600: 37em;
+$break-768: 48em;
+$break-769: 48.065em;
+$break-980: 61.25em;
+$break-1024: 64em;
+$break-1200: 75em;
+$break-1224: 76.5em;
+$break-1280: 80em;
+$break-1366: 85.375em;
+$break-1824: 114em;
+
+/*------------------------------------*\
+    breakpoint mixin
+\*------------------------------------*/
+@mixin breakpoint($point) {
+  @if $point == tablet {
+    @media (min-width: $break-768) { @content; }
+  }
+
+  @else if $point == desktop {
+    @media (min-width: $break-1280) { @content; }
+  }
+
+    // Smartphones (portrait and landscape)
+  @else if $point == mobile {
+    @media only screen
+    and (min-device-width : $break-320)
+    and (max-device-width : $break-480) { @content; }
+  }
+
+    // Smartphones (landscape)
+  @else if $point == mobileLandscape {
+    @media only screen
+    and (min-width : $break-321) { @content; }
+  }
+
+    // Smartphones (portrait)
+  @else if $point == mobilePortrait {
+    @media only screen
+    and (max-width : $break-320) { @content; }
+  }
+
+    // iPads (portrait and landscape)
+  @else if $point == ipad {
+    @media only screen
+    and (min-device-width : $break-768)
+    and (max-device-width : $break-1024) { @content; }
+  }
+
+    // iPads (landscape)
+  @else if $point == ipadLandscape {
+    @media only screen
+    and (min-device-width : $break-768)
+    and (max-device-width : $break-1024)
+    and (orientation : landscape) { @content; }
+  }
+
+    // iPads (portrait)
+  @else if $point == ipadPortrait {
+    @media only screen
+    and (min-device-width : $break-768)
+    and (max-device-width : $break-1024)
+    and (orientation : portrait) { @content; }
+  }
+
+    // Desktops and laptops
+  @else if $point == desktopLaptop {
+    @media only screen
+    and (min-width : $break-1224) { @content; }
+  }
+
+    // Large screens
+  @else if $point == desktopLarge {
+    @media only screen
+    and (min-width : $break-1824) { @content; }
+  }
+
+    // iPhone 4
+  @else if $point == iphone4 {
+    @media
+    only screen and (-webkit-min-device-pixel-ratio : 1.5),
+    only screen and (min-device-pixel-ratio : 1.5) { @content; }
+  }
+
+  @else {
+    @media only screen
+    and (min-width : $point) { @content; }
+  }
+}
+
+/** Break desktop first**/
+@mixin breakpoint-down($point) {
+  @media only screen
+  and (max-width : $point) { @content; }
+}

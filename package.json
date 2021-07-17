@@ -1,0 +1,29 @@
+{
+  "name": "simple-wordpress-theme",
+  "version": "1.0.1",
+  "description": "This is an Simple WordPress theme project, included all basic WordPress theme files, help you quick convert your HTML & CSS to a WordPress theme.",
+  "author": "Hoang Kiem - kiemhd@outlook.com",
+  "license": "GNU-v3.0",
+  "keywords": [
+    "PHP",
+    "HTML",
+    "CSS",
+    "JS",
+    "SCSS"
+  ],
+  "homepage": "https://github.com/binjuhor/simple-wp-theme",
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:binjuhor/simple-wp-theme.git"
+  },
+  "bugs": {
+    "url": "https://github.com/binjuhor/simple-wp-theme/issues"
+  },
+  "scripts": {
+    "watch": "node-sass -w assets/scss/styles.scss assets/css/styles.css",
+    "build": "node-sass assets/scss/styles.scss assets/css/styles.css --output-style compressed"
+  },
+  "dependencies": {
+    "node-sass": "^5.0.0"
+  }
+}
