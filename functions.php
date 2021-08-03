@@ -33,7 +33,7 @@ add_action( 'wp_enqueue_scripts', 'xdevtheme_scripts' );
  */
 function xdevtheme_register_nav_menu(){
 	register_nav_menus( [
-		'primary_menu' => __( 'Primary Menu', 'sunny' ),
+		'primary_menu' => __( 'Primary Menu', 'xdev-theme' ),
 	]);
 }
 add_action( 'after_setup_theme', 'xdevtheme_register_nav_menu', 0 );
