@@ -5,8 +5,8 @@
  * @link https://developer.wordpress.org/themes/basics/template-hierarchy/
  *
  * @package WordPress
- * @subpackage Sunny
- * @since sunny 1.0.0
+ * @subpackage xDev-theme
+ * @since xDev-theme 1.0.0
  */
 
 get_header();

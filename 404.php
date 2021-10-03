@@ -5,8 +5,8 @@
  * @link https://codex.wordpress.org/Creating_an_Error_404_Page
  *
  * @package WordPress
- * @subpackage Sunny
- * @since sunny 1.0.0
+ * @subpackage xDev-theme
+ * @since xDev-theme 1.0.0
  */
 
 get_header();
