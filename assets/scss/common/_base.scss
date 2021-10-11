@@ -21,7 +21,7 @@ body {
   margin: 0;
   padding: 0;
   font-size: rem(16px);
-  font-family: 'Arial', sans-serif;
+  font-family: $primary-font;
   overflow-wrap: break-word;
   font-weight: 400;
   color: var(--text-body);
