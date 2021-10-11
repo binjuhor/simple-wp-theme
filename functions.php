@@ -37,3 +37,52 @@ function xdevtheme_register_nav_menu(){
 	]);
 }
 add_action( 'after_setup_theme', 'xdevtheme_register_nav_menu', 0 );
+
+
+/**
+ * @param string $template_name
+ * @param array $data
+ * @param bool $echo
+ * @return false|string
+ */
+function template_part($template_name = '', $data = [], $echo =  true ){
+    $full_template_name = get_template_directory() . "/templates/{$template_name}.php";
+    if (file_exists($full_template_name)) {
+        if (!empty($data)) extract($data);
+        ob_start();
+        include $full_template_name;
+        if ($echo) {
+            echo ob_get_clean();
+        } else {
+            return ob_get_clean();
+        }
+
+    }
+    return '';
+}
+
+/**
+ * Show image from path with params is image name
+ *
+ * @param $file
+ * @param bool $show
+ * @return mixed
+ */
+function assets($file, $show = true) {
+	$file_url = get_template_directory_uri()."/assets/{$file}";
+    if (!$show) {
+        return $file_url;
+    }
+
+    echo $file_url;
+}
+
+/**
+ * Show active class for menu
+ *
+ * @param $page
+ * @param $current_page
+ */
+function active($page) {
+    echo (is_page($page))?'active':'';
+}
