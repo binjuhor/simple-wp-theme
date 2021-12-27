@@ -20,7 +20,7 @@
     "url": "https://github.com/binjuhor/simple-wp-theme/issues"
   },
   "scripts": {
-    "watch": "node-sass -w assets/scss/styles.scss assets/css/styles.css",
+    "watch": "node-sass -w --source-map true assets/scss/styles.scss assets/css/styles.css",
     "build": "node-sass assets/scss/styles.scss assets/css/styles.css --output-style compressed"
   },
   "dependencies": {
