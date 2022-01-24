@@ -83,6 +83,12 @@ function assets($file, $show = true) {
  * @param $page
  * @param $current_page
  */
-function active($page) {
-    echo (is_page($page))?'active':'';
+function active($page)
+{
+    global $post;
+    $parent = get_post($post->post_parent);
+
+    if(is_page($page) || ($page === $parent->post_name)) {
+        echo 'active';
+    }
 }
