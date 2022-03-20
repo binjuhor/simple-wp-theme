@@ -8,8 +8,8 @@
  * @link https://developer.wordpress.org/reference/functions/get_search_form/
  *
  * @package WordPress
- * @subpackage Waou
- * @since waou 1.0.0
+ * @subpackage xDev-theme
+ * @since xDev-theme 1.0.0
  */
 
 /*
