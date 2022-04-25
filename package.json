@@ -24,6 +24,6 @@
     "build": "node-sass assets/scss/styles.scss assets/css/styles.css --output-style compressed"
   },
   "dependencies": {
-    "node-sass": "npm:sass"
+    "node-sass": "^7.0.1"
   }
 }
