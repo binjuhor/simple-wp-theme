@@ -1,0 +1,1 @@
+<h5><?php esc_html_e( 'It looks like nothing was found at this location. Maybe try a search?', 'xdev-theme' ); ?></h5>

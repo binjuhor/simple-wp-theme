@@ -14,26 +14,32 @@ get_header();
 $description = get_the_archive_description();
 ?>
 
-<?php if ( have_posts() ) : ?>
+<main class="main-content">
+	<div class="section-heading">
+		<div class="container-fluid">
+			<h1><?php the_archive_title( '', '' ); ?></h1>
+			<?php echo wp_kses_post( wpautop( $description ) ); ?>
+		</div>
+	</div>
 
-	<header class="page-header alignwide">
-		<?php the_archive_title( '<h1 class="page-title">', '</h1>' ); ?>
-		<?php if ( $description ) : ?>
-			<div class="archive-description"><?php echo wp_kses_post( wpautop( $description ) ); ?></div>
-		<?php endif; ?>
-	</header><!-- .page-header -->
+	<?php if ( have_posts() ) : ?>
+	<div class="main-content__inner">
+		<div class="post__list">
+			<?php while ( have_posts() ) : ?><?php the_post(); ?>
+			<?php get_template_part( 'template-parts/content/content' ); ?>
+			<?php endwhile; ?>
+		</div>
+	</div>
 
-	<?php while ( have_posts() ) : ?>
-		<?php
-        the_post();
-		the_content();
-		?>
-	<?php endwhile; ?>
+	<?php get_template_part( 'template-parts/pagination' ); ?>
 
-	<?php xdevtheme_the_posts_navigation(); ?>
+	<?php else : ?>
+	<div class="main-content__inner">
+		<?php get_template_part( 'template-parts/content/content-none' ); ?>
+	</div>
+	<?php endif; ?>
 
-<?php else : ?>
-	<?php get_template_part( 'template-parts/content/content-none' ); ?>
-<?php endif; ?>
+</main>
 
 <?php get_footer(); ?>
+
