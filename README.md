@@ -1,7 +1,6 @@
-## Sinple WordPress theme
+## Simple WordPress theme
 
 This is an Simple WordPress theme project, included all basic WordPress theme files, help you quick convert your HTML & CSS to a WordPress theme.
-
 
 
 ## Install
