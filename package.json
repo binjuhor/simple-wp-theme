@@ -20,10 +20,10 @@
     "url": "https://github.com/binjuhor/simple-wp-theme/issues"
   },
   "scripts": {
-    "watch": "node-sass -w --source-map true assets/scss/styles.scss assets/css/styles.css",
-    "build": "node-sass assets/scss/styles.scss assets/css/styles.css --output-style compressed"
+    "watch": "sass --watch --source-map assets/scss/styles.scss assets/css/styles.css",
+    "build": "sass --no-source-map  --style=compressed assets/scss/styles.scss assets/css/styles.css"
   },
-  "dependencies": {
-    "node-sass": "^7.0.1"
+  "devDependencies": {
+    "sass": "^1.56.2"
   }
 }
